@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style>
+body {
+  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_trQFzq07k4zFIkAu3ROxmJSj36KNgIzNjQ&usqp=CAU') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size:Â cover;
+  
+ 
+	display: flex;
+	justify-content: center;
+	align-content:center;
+}
+
+</style>
+</head>
+<body>
+<form th:action="@{/validatingData}" th:object=${adminObj}
+			method="get">
+			<!-- target="_blank" -->
+			<table>
+				<thead>
+					<tr>
+						<th colspan="2">Sign in</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Email Address</td>
+						<td><input type="text" class="text" name="username"
+							th:field="*{UserName}" autofocus required /></td>
+					</tr>
+				</tbody>
+				<tbody>
+					<tr>
+						<td>Password</td>
+						<td><input type="password" class="text" name="password"
+							th:field="*{Password}" required /></td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="2"><a href="/validatingData"> <input
+								type="submit" class="btn btn-success" value="Sign In" />
+						</a></td>
+
+					</tr>
+				</tfoot>
+			</table>
+		</form>
+
+
+</body>
+</html>
